@@ -154,8 +154,9 @@
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-PHP | HTML | CSS | MYSQL | GIT \\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+% Coluna 1 (&) Coluna 2
+\textbf{Linguagens} & PHP | SQL | GIT \\
+\textbf{Outras}    & HTML | CSS | BOOTSTRAP \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -191,11 +192,23 @@ long long line of blah blah that will wrap when the table fills the column width
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Educação}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2025 - 2027 & Tecnólogo em Análise e Desenvolvimento de Sistemas na \textbf{Universidade Federal do Paraná} \hfill \normalsize (IRA: 0.877/1) \\
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+    2025 - 2027 & 
+    % Início da tabela aninhada para alinhar pelo topo [t]
+    \begin{tabular}[t]{@{}l@{}} 
+        Tecnólogo em Análise e Desenvolvimento de Sistemas \\ % Quebra de linha
+        \textbf{Universidade Federal do Paraná} 
+    \end{tabular}
+    \hfill \normalsize (IRA: 0.877/1) \\
 
-2022 - 2024 & Ensino Médio no \textbf{Colégio Militar de Curitiba} \hfill (Média Global: 9.02/10.0) \\ 
+    \addlinespace[4pt] % Adiciona um pequeno espaço vertical entre as entradas
 
+    2022 - 2024 & 
+    \begin{tabular}[t]{@{}l@{}}
+        Ensino Médio \\
+        \textbf{Colégio Militar de Curitiba}
+    \end{tabular}
+    \hfill (Média Global: 9.02/10.0) \\
 \end{tabularx}
 
 
