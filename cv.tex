@@ -1,7 +1,49 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
 %----------------------------------------------------------------------------------------
 %	DOCUMENT DEFINITION
 %----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
@@ -22,10 +64,11 @@
 \usepackage{enumitem}
 
 % centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
 
 %to prevent spillover of tabular into next pages
 \usepackage{supertabular}
+\usepackage{tabularx}
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.47\textwidth}
 
@@ -33,8 +76,10 @@
 \usepackage{titlesec}				
 \usepackage{multicol}
 \usepackage{multirow}
-\usepackage{booktabs}
+\usepackage{bookstabs}
 
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
@@ -51,35 +96,46 @@
 %for social icons
 \usepackage{fontawesome5}
 
+%debug page outer frames
+%\usepackage{showframe}
+
+
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
 
 % non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty} 
 
 %----------------------------------------------------------------------------------------
 %	TITLE
 %----------------------------------------------------------------------------------------
+
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Nicolas Mendes Fernandes} \\[7.5pt]
-\href{https://github.com/nicolas-mendes}{\raisebox{-0.05\height}\faGithub\ nicolas-mendes} \ $|$ \ 
-\href{https://linkedin.com/in/nicolasmendesfernandes}{\raisebox{-0.05\height}\faLinkedin\ nicolasmendesfernandes} \ $|$ \ 
-\href{mailto:nicolasmendes512@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ nicolasmendes512@gmail.com} \\
-\href{tel:+5541998710753}{\raisebox{-0.05\height}\faMobile \ +55 (41) 99871-0753} \\
+\href{https://github.com/nicolas-mendes}{\raisebox{-0.05\height}\faGithub\ nicolas-mendes} \ $|$ \ 
+\href{https://linkedin.com/in/nicolasmendesfernandes}{\raisebox{-0.05\height}\faLinkedin\ nicolasmendesfernandes} \ $|$ \ 
+\href{tel:+55041998710753}{\raisebox{-0.05\height}\faMobile \ 041 99871-0753} \\
+\href{mailto:nicolasmendes512gmail.com}{\raisebox{-0.05\height}\faEnvelope \ nicolasmendes512@gmail.com} \\
+
 \end{tabularx}
 
-%Interests/ Keywords/ Summary
+%----------------------------------------------------------------------------------------
+%	SUMMARY
+%----------------------------------------------------------------------------------------
 \section*{Sumário}
 \centerline{\small\textit{Curitiba, PR}}
 \vspace{4pt}
 
-Estudante de Análise e Desenvolvimento de Sistemas com 6 meses de estudo dedicados ao desenvolvimento web, com foco prático na stack PHP, Laravel e SQL. Busco uma oportunidade de estágio para aplicar meu conhecimento na solução de problemas reais, absorver conhecimentos da equipe e aprofundar minhas habilidades nas ferramentas e práticas do ecossistema de desenvolvimento profissional.
+Estudante de  \textbf{Análise e Desenvolvimento de Sistemas} com 6 meses de estudo dedicados ao \textbf{desenvolvimento web e Backend}, com foco prático na stack PHP, Laravel e SQL. 
+Busco uma oportunidade de estágio para aplicar meu conhecimento na solução de problemas reais, 
+absorver conhecimentos da equipe e aprofundar minhas habilidades nas ferramentas e práticas do ecossistema de desenvolvimento profissional.
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
+
 \section{Educação}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
     2025 - 2027 & 
@@ -104,9 +160,11 @@ Estudante de Análise e Desenvolvimento de Sistemas com 6 meses de estudo dedica
     \hfill (Média Global: 9.02/10.0) \\
 \end{tabularx}
 
+
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
+
 \section{Habilidades Técnicas}
 \begin{itemize}[noitemsep, nolistsep, leftmargin=*]
   \item Linguagens de Programação: PHP, Laravel, SQL
@@ -119,6 +177,7 @@ Estudante de Análise e Desenvolvimento de Sistemas com 6 meses de estudo dedica
 %----------------------------------------------------------------------------------------
 %	PROJECTS
 %----------------------------------------------------------------------------------------
+
 \section*{Projetos}
 \begin{itemize}[noitemsep, nolistsep, leftmargin=*, itemsep=8pt]
     \item 
@@ -139,7 +198,7 @@ Estudante de Análise e Desenvolvimento de Sistemas com 6 meses de estudo dedica
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
-%  Languages
+%  LANGUAGES
 %----------------------------------------------------------------------------------------
 \section{Idiomas}
 \begin{tabularx}{\linewidth}{@{}X@{}}
@@ -147,7 +206,9 @@ Estudante de Análise e Desenvolvimento de Sistemas com 6 meses de estudo dedica
 \textbf{Português} — Nativo \\
 \end{tabularx}
 
+%----------------------------------------------------------------------------------------
+%  FOOTER
+%----------------------------------------------------------------------------------------
 \vfill
 \center{\footnotesize Last updated: \today}
-
 \end{document}
